@@ -1,0 +1,14 @@
+{
+    "dr.gilbert": {
+        "password": "123",
+        "sex": "m",
+        "fullName": "Gilbert Tekli",
+        "dob": "2023-11-23"
+    },
+    "omar": {
+        "password": "456",
+        "sex": "m",
+        "fullName": "Omar El Zaatari",
+        "dob": "2003-09-30"
+    }
+}

@@ -1,0 +1,47 @@
+<html>
+    
+    <head>
+        <title>
+           Omar El Zaatari-Login
+        </title>
+        
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body>
+
+            <div id="page-content">
+        
+                <div class="content-box" style="top: 30%; left: 33%;">
+                    <h2>LogIn</h2>
+                    <form action="BE/login.php" method="post" id="login-form">
+                        <label for="username">Username:</label><br>
+                        <input type="text" name="username" id="username"><br>
+    
+                        <label for="password">Password:</label><br>
+                        <input type="password" name="password" id="password"><br><br>
+    
+                        <button type="button" class="login-btn" onclick="login()">Log In</button><br>
+    
+                        <span>Don't have an account? <a href="/html/signup.html">Sign up!</a></span>
+                    </form>
+                </div>
+
+        <script>
+            function login(){
+                var un=document.getElementById("username").value;
+                var pass=document.getElementById("password").value;
+                if ((un=="")||(pass=="")){
+                    alert("You must fill in the username and the password!");
+                }else{
+                    document.getElementById("login-form").submit();
+                }
+        
+            }
+            
+        </script>
+        
+
+
+    </body>
+</html>

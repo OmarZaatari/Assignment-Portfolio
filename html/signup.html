@@ -1,0 +1,93 @@
+<html>
+    
+<head>
+    <title>SignUp-Omar Zaatari</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div id="page-content">
+        
+            <div class="content-box" style="top: 20%; left: 33%; height: auto;">
+                <h2>SignUp</h2>
+
+                <form action="../BE/signup.php" class="signup-form" method="POST" name="signup-form">
+                    <br>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" name="fullName" id="fullName">
+                    <br>
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username">
+                    <br>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password">
+                    <br>
+                    <label for="password">Confirm Password:</label>
+                    <input type="password" name="confPassword" id="confPassword">
+                    <br>
+                    <label for="dob">Age:</label>
+                    <br>
+                    <input type="date" id="dob" name="dob">
+
+                    <input type="radio" value="m" name="sex" id="male" class="radio" style="margin-left: -15%;">
+                    <label for="sex" name="male" style="margin-left: -30%;">Male</label>
+
+                    <input type="radio" name="sex" id="female" class="radio" style="margin-left: -15%;">
+                    <label for="sex" value="f" name="female" style="margin-left: -30%;">Female</label>
+                    <br>
+                    <br>
+                    <button type="button" class="login-btn" onclick="SignUp()">Sign Up</button>
+                    <br>
+                    <br>
+                    <button type="button" class="login-btn" onclick="ClearForm()" style="width: auto; height: auto;">Clear</button>
+                    <br>
+                    <span>Already have an account? <a href="../index.html">Log In!</a></span>
+                </form>
+            
+        </div>
+    </div>
+
+    <script>
+        function SignUp(){
+            var mForm=document.querySelector("form[name='signup-form']");
+            var fullName=mForm.elements["fullName"].value;
+            var username=mForm.elements["username"].value;
+            var password=mForm.elements["password"].value;
+            var confPassword=mForm.elements["confPassword"].value;
+            var sex=mForm.elements["sex"].value;
+            var dob = mForm.elements["dob"].value;
+
+            if(username==""){
+                alert("Please enter a username.");
+            }
+            else if ((password!=confPassword)||(confPassword==""))
+                alert("Passwords must be equal.");
+
+            else if ((fullName==""))
+                alert("Please enter your name.");
+
+            else if(sex==""){
+                alert("Choose a gender.");
+                
+            }
+            else if(dob==""){
+                alert("Enter date of birth.");
+                
+            }
+
+            else
+                mForm.submit();        
+        }
+        function ClearForm() {
+            var mForm = document.querySelector("form[name='signup-form']");
+            mForm.elements["username"].value = "";
+            mForm.elements["password"].value = "";
+            mForm.elements["confPassword"].value = "";
+            mForm.elements["sex"].value = "";
+            mForm.elements["dob"].value = "";
+            mForm.elements["fullName"].value="";
+        }
+    </script>
+</body>
+
+</html>
